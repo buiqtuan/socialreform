@@ -1,0 +1,36 @@
+# Create CI/CD pipeline for automated testing and deployment
+# Just some dumb text to make the AI understand the context
+# TODO: Create a CI/CD pipeline for automated testing and deployment of the project using GitHub Actions.
+# The pipeline should run on every push to the main branch and on pull requests targeting the main branch.
+# It should include steps for checking out the code, setting up the environment, installing dependencies,
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run tests
+        run: pnpm test
+
+      - name: Build
+        run: pnpm build

@@ -1,0 +1,68 @@
+{
+  "folders": [
+    {
+      "name": "🏠 Root",
+      "path": "."
+    },
+    {
+      "name": "📱 Mobile App",
+      "path": "./apps/mobile"
+    },
+    {
+      "name": "🔧 Backend API",
+      "path": "./apps/backend"
+    },
+    {
+      "name": "📦 Shared Types",
+      "path": "./packages/shared-types"
+    },
+    {
+      "name": "🛠️ Shared Utils",
+      "path": "./packages/shared-utils"
+    },
+    {
+      "name": "⚙️ Shared Config",
+      "path": "./packages/shared-config"
+    }
+  ],
+  "settings": {
+    "typescript.preferences.includePackageJsonAutoImports": "on",
+    "typescript.suggest.autoImports": true,
+    "typescript.preferences.quoteMark": "single",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/.expo": true,
+      "**/.next": true,
+      "**/dist": true,
+      "**/build": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/.expo": true,
+      "**/.next": true,
+      "**/dist": true,
+      "**/build": true,
+      "**/yarn.lock": true,
+      "**/pnpm-lock.yaml": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-vscode.vscode-typescript-next",
+      "bradlc.vscode-tailwindcss",
+      "prisma.prisma",
+      "ms-vscode.vscode-json",
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "expo.vscode-expo-tools",
+      "ms-vscode.vscode-react-native",
+      "formulahendry.auto-rename-tag",
+      "christian-kohler.path-intellisense",
+      "ms-vscode.vscode-thunder-client"
+    ]
+  }
+}

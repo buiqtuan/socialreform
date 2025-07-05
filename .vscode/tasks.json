@@ -1,0 +1,159 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Install Dependencies",
+      "type": "shell",
+      "command": "pnpm install",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Start Development Servers",
+      "type": "shell",
+      "command": "pnpm dev",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true
+    },
+    {
+      "label": "Start Backend Only",
+      "type": "shell",
+      "command": "pnpm dev:backend",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true
+    },
+    {
+      "label": "Start Mobile Only",
+      "type": "shell",
+      "command": "pnpm dev:mobile",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true
+    },
+    {
+      "label": "Build All",
+      "type": "shell",
+      "command": "pnpm build",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Type Check",
+      "type": "shell",
+      "command": "pnpm type-check",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Lint All",
+      "type": "shell",
+      "command": "pnpm lint",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Database Push",
+      "type": "shell",
+      "command": "pnpm db:push",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Database Migrate",
+      "type": "shell",
+      "command": "pnpm db:migrate",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Database Studio",
+      "type": "shell",
+      "command": "pnpm db:studio",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true
+    }
+  ]
+}

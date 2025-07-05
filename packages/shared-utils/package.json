@@ -1,0 +1,21 @@
+{
+  "name": "@social-reform/shared-utils",
+  "version": "1.0.0",
+  "description": "Shared utilities for Social Reform",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "date-fns": "^2.30.0"
+  },
+  "files": [
+    "dist"
+  ]
+}
