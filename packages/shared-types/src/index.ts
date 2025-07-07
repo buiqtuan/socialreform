@@ -243,3 +243,51 @@ export interface UserSettings {
     defaultPlatforms: SocialPlatform[];
   };
 }
+
+// Configuration types
+export interface Configuration {
+  id: string;
+  key: string;
+  value: string;
+  description?: string;
+  category: string;
+  isSecret: boolean;
+  isActive: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface ConfigurationCategory {
+  name: string;
+  displayName: string;
+  description?: string;
+  configurations: Configuration[];
+}
+
+export interface ConfigurationRequest {
+  key: string;
+  value: string;
+  description?: string;
+  category?: string;
+  isSecret?: boolean;
+}
+
+export interface ConfigurationResponse {
+  key: string;
+  value: string;
+  description?: string;
+  category: string;
+  isSecret: boolean;
+  isActive: boolean;
+}
+
+export enum ConfigurationCategories {
+  AUTHENTICATION = 'authentication',
+  SOCIAL_MEDIA = 'social_media',
+  EMAIL = 'email',
+  UPLOAD = 'upload',
+  FIREBASE = 'firebase',
+  APP = 'app',
+  API = 'api',
+  GENERAL = 'general'
+}

@@ -34,17 +34,17 @@ model User {
 }
 
 model SocialAccount {
-  id                String   @id @default(cuid())
-  userId            String
-  platform          String
-  platformUserId    String
-  platformUsername  String
-  accessToken       String
-  refreshToken      String?
-  expiresAt         DateTime?
-  isActive          Boolean  @default(true)
-  createdAt         DateTime @default(now())
-  updatedAt         DateTime @updatedAt
+  id               String    @id @default(cuid())
+  userId           String
+  platform         String
+  platformUserId   String
+  platformUsername String
+  accessToken      String
+  refreshToken     String?
+  expiresAt        DateTime?
+  isActive         Boolean   @default(true)
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
 
   // Relations
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -54,19 +54,19 @@ model SocialAccount {
 }
 
 model Post {
-  id          String   @id @default(cuid())
+  id          String    @id @default(cuid())
   userId      String
   title       String
   content     String
   mediaUrls   String[]
   scheduledAt DateTime?
   publishedAt DateTime?
-  status      String   @default("draft")
+  status      String    @default("draft")
   platforms   String[]
   hashtags    String[]
   mentions    String[]
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 
   // Relations
   user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -147,14 +147,14 @@ model Team {
 }
 
 model TeamMember {
-  id          String   @id @default(cuid())
+  id          String    @id @default(cuid())
   userId      String
   teamId      String
   role        String
   permissions String[]
-  invitedAt   DateTime @default(now())
+  invitedAt   DateTime  @default(now())
   joinedAt    DateTime?
-  status      String   @default("pending")
+  status      String    @default("pending")
 
   // Relations
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -169,12 +169,12 @@ model UserSettings {
   userId String @unique
 
   // Notification settings
-  emailNotifications         Boolean @default(true)
-  pushNotifications         Boolean @default(true)
-  postPublishedNotifications Boolean @default(true)
-  postFailedNotifications   Boolean @default(true)
+  emailNotifications             Boolean @default(true)
+  pushNotifications              Boolean @default(true)
+  postPublishedNotifications     Boolean @default(true)
+  postFailedNotifications        Boolean @default(true)
   scheduledReminderNotifications Boolean @default(true)
-  weeklyReportNotifications Boolean @default(true)
+  weeklyReportNotifications      Boolean @default(true)
 
   // Privacy settings
   profileVisibility String  @default("public")
@@ -215,4 +215,18 @@ model DeviceToken {
   updatedAt DateTime @updatedAt
 
   @@map("device_tokens")
+}
+
+model Configuration {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String
+  description String?
+  category    String   @default("general")
+  isSecret    Boolean  @default(false)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("configurations")
 }
