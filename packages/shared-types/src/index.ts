@@ -4,6 +4,7 @@ export interface User {
   email: string;
   username: string;
   displayName: string;
+  password?: string; // Optional for social login users
   avatar?: string;
   bio?: string;
   verified: boolean;
@@ -39,6 +40,7 @@ export enum SocialPlatform {
   TIKTOK = 'tiktok',
   TWITTER = 'twitter',
   FACEBOOK = 'facebook',
+  GOOGLE = 'google',
   LINKEDIN = 'linkedin',
   TWITCH = 'twitch',
 }

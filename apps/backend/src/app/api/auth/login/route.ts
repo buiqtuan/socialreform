@@ -48,6 +48,17 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Check if user has a password (not a social login user)
+    if (!user.password || user.password === '') {
+      return NextResponse.json(
+        { 
+          success: false,
+          error: 'This account uses social login. Please use the appropriate social login method.' 
+        } as ApiResponse<never>,
+        { status: 401 }
+      )
+    }
+
     // Verify password
     const isValidPassword = await comparePassword(password, user.password)
     if (!isValidPassword) {

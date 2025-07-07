@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
         email,
         username,
         displayName,
-        // Note: We're not storing the password in this schema - you might want to add a password field
+        password: hashedPassword,
       },
       select: {
         id: true,
