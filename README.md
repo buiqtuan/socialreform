@@ -12,6 +12,63 @@ A comprehensive social media management tool for video creators, built with Reac
 - **Push Notifications**: Stay updated with real-time notifications
 - **Mobile & Web**: Native mobile app and web dashboard
 
+## 🔧 Environment Setup
+
+### Prerequisites
+- Node.js 18+ and pnpm
+- PostgreSQL database (we recommend Railway for hosting)
+- (Optional) Firebase project for push notifications
+
+### Setup Steps
+
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd social-reform
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pnpm install
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   # Copy environment templates
+   cp apps/backend/.env.example apps/backend/.env
+   cp apps/mobile/.env.example apps/mobile/.env
+   ```
+
+4. **Configure database**
+   - Create a PostgreSQL database (Railway recommended)
+   - Update `DATABASE_URL` in `apps/backend/.env` with your connection string
+   - Generate secure JWT secrets and update them in the .env file
+
+5. **Initialize database**
+   ```bash
+   pnpm db:push
+   ```
+
+6. **Start development servers**
+   ```bash
+   pnpm dev
+   ```
+
+### Environment Variables
+
+#### Backend (`apps/backend/.env`)
+- `DATABASE_URL`: PostgreSQL connection string
+- `JWT_SECRET`: Secret key for JWT tokens
+- `JWT_REFRESH_SECRET`: Secret key for refresh tokens
+- Social media API keys (optional)
+- Firebase credentials (optional)
+
+#### Mobile (`apps/mobile/.env`)
+- `API_URL`: Backend API URL
+- `FIREBASE_CONFIG`: Firebase configuration (optional)
+
+⚠️ **Important**: Never commit `.env` files to git. They contain sensitive credentials.
+
 ## 🏗️ Tech Stack
 
 ### Frontend
