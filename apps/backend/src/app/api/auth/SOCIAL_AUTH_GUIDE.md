@@ -122,6 +122,7 @@ const SOCIAL_PROVIDERS: Record<SocialPlatform, SocialProviderConfig> = {
 
 3. **Create API route** (`app/api/auth/new-platform/route.ts`):
 ```typescript
+
 import { NextRequest } from 'next/server'
 import { SocialPlatform } from '@social-reform/shared-types'
 import SocialLoginHandler from '@/lib/services/social-login-handler'

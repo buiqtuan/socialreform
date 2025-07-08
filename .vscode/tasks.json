@@ -154,6 +154,52 @@
         "cwd": "${workspaceFolder}"
       },
       "isBackground": true
+    },
+    {
+      "label": "Run Integration Tests",
+      "type": "shell",
+      "command": "pnpm test:integration",
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Run Tests with Coverage",
+      "type": "shell",
+      "command": "pnpm test:coverage",
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Run Tests in Watch Mode",
+      "type": "shell",
+      "command": "pnpm test:watch",
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true
     }
   ]
 }
