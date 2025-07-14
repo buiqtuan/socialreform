@@ -1,0 +1,11 @@
+{
+  "typescript.preferences.includePackageJsonAutoImports": "off",
+  "typescript.validate.enable": false,
+  "typescript.suggest.enabled": false,
+  "[typescript]": {
+    "typescript.validate.enable": false
+  },
+  "files.associations": {
+    "tsconfig.json": "jsonc"
+  }
+}

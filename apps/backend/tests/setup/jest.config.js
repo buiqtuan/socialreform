@@ -1,27 +1,30 @@
 /** @type {import('jest').Config} */
 module.exports = {
-  preset: "ts-jest",
+  // Test Environment Configuration
   testEnvironment: "node",
-  roots: ["<rootDir>/.."],
+  rootDir: "../..",
+
+  // Test Discovery
   testMatch: [
-    "<rootDir>/../integration/**/*.test.ts",
-    "<rootDir>/../integration/**/*.spec.ts",
+    "<rootDir>/tests/integration/**/*.test.js",
+    "<rootDir>/tests/integration/**/*.spec.js",
   ],
-  transform: {
-    "^.+\\.ts$": "ts-jest",
-  },
-  setupFilesAfterEnv: ["<rootDir>/setup-tests.ts"],
-  moduleNameMapping: {
-    "^@/(.*)$": "<rootDir>/../../src/$1",
-  },
+
+  // Test Setup
+  setupFilesAfterEnv: ["<rootDir>/tests/setup/test-setup.js"],
   testTimeout: 30000,
+
+  // Coverage Configuration
   collectCoverageFrom: [
-    "<rootDir>/../../src/**/*.ts",
-    "!<rootDir>/../../src/**/*.d.ts",
-    "!<rootDir>/../../src/**/types.ts",
+    "<rootDir>/src/**/*.js",
+    "<rootDir>/src/**/*.ts",
+    "!<rootDir>/src/**/*.d.ts",
+    "!<rootDir>/src/**/types.ts",
   ],
-  coverageDirectory: "<rootDir>/../coverage",
+  coverageDirectory: "<rootDir>/tests/coverage",
   coverageReporters: ["text", "lcov", "html"],
+
+  // Test Behavior
   clearMocks: true,
   restoreMocks: true,
   verbose: true,

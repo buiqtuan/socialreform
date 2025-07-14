@@ -13,10 +13,10 @@
     "db:migrate": "prisma migrate dev",
     "db:studio": "prisma studio",
     "db:seed": "tsx prisma/seed.ts",
-    "test": "jest",
-    "test:integration": "jest --config tests/setup/jest.config.js",
-    "test:watch": "jest --config tests/setup/jest.config.js --watch",
-    "test:coverage": "jest --config tests/setup/jest.config.js --coverage",
+    "test": "npx jest --config tests/setup/jest.config.js",
+    "test:integration": "npx jest --config tests/setup/jest.config.js",
+    "test:watch": "npx jest --config tests/setup/jest.config.js --watch",
+    "test:coverage": "npx jest --config tests/setup/jest.config.js --coverage",
     "clean": "rm -rf .next dist"
   },
   "dependencies": {

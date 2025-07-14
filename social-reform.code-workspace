@@ -48,7 +48,8 @@
       "**/build": true,
       "**/yarn.lock": true,
       "**/pnpm-lock.yaml": true
-    }
+    },
+    "powershell.cwd": "🏠 Root"
   },
   "extensions": {
     "recommendations": [
